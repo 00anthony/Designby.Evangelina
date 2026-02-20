@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Coffee, Award, Heart } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   { value: "12+", label: "Great Years", icon: Award },
@@ -58,16 +59,13 @@ export default function About() {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="polaroid rotate-[-3deg] max-w-sm mx-auto"
             >
-              <div className="w-full h-96 bg-gradient-to-br from-sage/20 via-cream to-gold/20 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-full bg-sage/30 mx-auto mb-4 flex items-center justify-center">
-                      <span className="font-display text-4xl text-sage/60">E</span>
-                    </div>
-                    <p className="font-handwriting text-ink/40 text-sm">Photo of Evangelina</p>
-                  </div>
-                </div>
-              </div>
+              <Image 
+                src='/Headshot.png'
+                alt='Angel Evangelina'
+                width={360}
+                height={540}
+                loading="lazy"
+              />
             </motion.div>
 
             {/* Sticky note quote */}
@@ -79,7 +77,7 @@ export default function About() {
             >
               <Star className="text-ink/40 mb-2" size={16} />
               <p className="font-handwriting text-ink text-sm leading-relaxed">
-                "Design is not just what it looks like, it's how it works."
+                "Reminder: There is inspiration hidden in everything and everyone!"
               </p>
             </motion.div>
 
@@ -124,7 +122,7 @@ export default function About() {
               </h2>
 
               <p className="font-sans text-ink/70 leading-relaxed mb-4">
-                I started with a sketchbook and a dream in a small London studio. Today, I help
+                I started with a sketchbook and a dream in a small Austin studio. Today, I help
                 global brands find their visual rhythm through organic design and bold experimentation.
               </p>
 

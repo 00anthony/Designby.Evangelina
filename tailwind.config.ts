@@ -14,6 +14,7 @@ const config: Config = {
         handwriting: ["'Caveat'", "cursive"],
         display: ["'Abril Fatface'", "serif"],
         mono: ["'Special Elite'", "monospace"],
+        monsieur: ["var(--font-monsieur)"],
       },
       colors: {
         cream: "#f5f0e8",

@@ -8,7 +8,7 @@ const initiatives = [
   {
     icon: BookOpen,
     title: "Design for Kids",
-    desc: "Monthly workshops teaching typography and illustration to children aged 8–14 in underserved London communities.",
+    desc: "Monthly workshops teaching typography and illustration to children aged 8–14 in underserved Austin communities.",
     hours: "40 hrs/year",
     color: "bg-sky/15",
     accent: "text-sky",
@@ -30,7 +30,7 @@ const initiatives = [
   {
     icon: Brush,
     title: "Mural Project",
-    desc: "Collaborating with local councils to bring murals and public art to grey urban walls across East London.",
+    desc: "Collaborating with local councils to bring murals and public art to grey urban walls across East Austin.",
     hours: "80 hrs/year",
     color: "bg-coral/10",
     accent: "text-coral",

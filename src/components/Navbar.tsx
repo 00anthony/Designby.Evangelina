@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Scissors } from "lucide-react";
+import { Menu, X, } from "lucide-react";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -40,8 +40,7 @@ export default function Navbar() {
             E
           </div>
           <div>
-            <div className="font-serif text-lg font-bold text-ink leading-none">Evangelina</div>
-            <div className="font-mono text-[10px] tracking-[0.2em] text-sky uppercase">Design Authority</div>
+            <div className="font-monsieur text-3xl text-ink leading-none">Design by Evangelina</div>
           </div>
         </a>
 

@@ -186,7 +186,7 @@ export default function ContactForm() {
               <h3 className="font-serif text-xl font-bold text-ink mb-4">Find Me Here</h3>
               <div className="space-y-3">
                 {[
-                  { icon: MapPin, label: "London, UK (working globally)" },
+                  { icon: MapPin, label: "Austin, TX (working nationally)" },
                   { icon: Mail, label: "hello@evangelinadesign.co" },
                   { icon: Clock, label: "Mon–Fri · 9am–6pm GMT" },
                 ].map(({ icon: Icon, label }) => (

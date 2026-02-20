@@ -27,7 +27,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-handwriting text-cream/60 text-base leading-relaxed max-w-xs">
-              Crafting visual identities that feel like home. London-based, globally loved.
+              Crafting visual identities that feel like home. Austin-based, globally loved.
             </p>
 
             {/* Social */}
