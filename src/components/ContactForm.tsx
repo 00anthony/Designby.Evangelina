@@ -210,7 +210,7 @@ export default function ContactForm() {
               <div className="space-y-3">
                 {[
                   { icon: MapPin, label: "Austin, TX (working nationally)" },
-                  { icon: Mail, label: "hello@evangelinadesign.co" },
+                  { icon: Mail, label: "designby.evangelina@gmail.com" },
                   { icon: Clock, label: "Mon–Fri · 9am–6pm GMT" },
                 ].map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-start gap-3">
