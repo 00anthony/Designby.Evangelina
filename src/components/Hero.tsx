@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const letters = [
   { char: "D", bg: "bg-white", color: "text-ink", rotate: -3, font: "font-display text-5xl" },
-  { char: "E", bg: "bg-sky", color: "text-white", rotate: 2, font: "font-mono text-5xl" },
+  { char: "E", bg: "bg-sky", color: "text-white", rotate: 2, font: "font-mono text-5xl pt-2" },
   { char: "S", bg: "bg-mustard", color: "text-ink", rotate: -1, font: "font-serif text-5xl" },
   { char: "I", bg: "bg-blush", color: "text-ink", rotate: 3, font: "font-handwriting text-5xl" },
   { char: "G", bg: "bg-white", color: "text-ink", rotate: -2, font: "font-sans text-5xl" },
@@ -53,7 +53,7 @@ function ScrapLetter({
       initial={{ opacity: 0, scale: 0, rotate: -20 }}
       animate={{ opacity: 1, scale: 1, rotate }}
       transition={{ delay, type: "spring", stiffness: 200, damping: 15 }}
-      className={`${bg} ${color} ${font} font-extrabold w-7 h-7 md:w-14 md:h-14 flex items-center justify-center text-3xl shadow-scrapbook hover:scale-110 transition-transform cursor-default select-none`}
+      className={`${bg} ${color} ${font} font-extrabold w-7 h-7 md:w-14 md:h-14 flex items-center justify-center shadow-scrapbook hover:scale-110 transition-transform cursor-default select-none`}
     >
       {char}
     </motion.div>
