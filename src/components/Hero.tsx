@@ -101,13 +101,17 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: -60, rotate: -8 }}
               animate={{ opacity: 1, x: 0, rotate: -5 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{
+                type: "tween",
+                ease: "linear",
+                duration: 0.8
+              }}
               style={{
                 backfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",
                 transform: "translateZ(0)"
               }}
-              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer transform-gpu will-change-transform"
+              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 cursor-pointer transform-gpu will-change-transform"
             >
               <Image 
                 src='/Headshot.PNG'
