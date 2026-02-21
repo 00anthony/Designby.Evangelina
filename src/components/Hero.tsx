@@ -110,7 +110,7 @@ export default function Hero() {
                 alt='Angel Evangelina'
                 width={360}
                 height={540}
-                loading="lazy"
+                style={{ objectFit: "cover" }}
               />
               <p className="font-handwriting text-center text-ink/60 text-sm mt-2">✦ est. 2012 ✦</p>
             </motion.div>
@@ -139,7 +139,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0, rotate: 6 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               
-              className="absolute left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer transform-gpu"
+              className=" md:left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer transform-gpu"
             >
               <Image 
                 src='/porsche-ice.JPG'
