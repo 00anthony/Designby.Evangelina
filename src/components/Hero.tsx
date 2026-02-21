@@ -73,40 +73,34 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 2 }}
           className="absolute top-32 left-12 w-24 h-24 opacity-10"
         >
           <svg viewBox="0 0 100 100" fill="none" stroke="#1a1209" strokeWidth="1.5">
             <path d="M50,10 L50,90 M10,50 L90,50 M20,20 L80,80 M80,20 L20,80" />
           </svg>
         </motion.div>
-        <motion.div
+        <div
           className="absolute bottom-32 right-24 opacity-10"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          
         >
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#1a1209" strokeWidth="1">
             <circle cx="40" cy="40" r="30" />
             <circle cx="40" cy="40" r="20" />
             <circle cx="40" cy="40" r="10" />
           </svg>
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full py-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Photo collage */}
-          <div className="relative h-[520px] -top-24 md:-top-0">
+          <div className="relative h-[520px] -top-24 md:-top-0 -left-12 md:-left-0">
             {/* Main polaroid */}
             <motion.div
               initial={{ opacity: 0, x: -60, rotate: -8 }}
               animate={{ opacity: 1, x: 0, rotate: -5 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              style={{
-                backfaceVisibility: "hidden",
-                WebkitBackfaceVisibility: "hidden",
-                transform: "translateZ(0)"
-              }}
               className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 md:transition-transform md:duration-300 cursor-pointer"
             >
               <Image 
@@ -122,7 +116,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: 60, rotate: 8 }}
               animate={{ opacity: 1, x: 0, rotate: 6 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               
               className="absolute left-80 top-8 polaroid w-52 z-10 border-4 border-coral/40 md:transition-transform md:duration-300 cursor-pointer "
             >
@@ -184,7 +178,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Typography collage */}
-          <div className="relative -top-56 md:-top-0 z-30">
+          <div className="relative -top-56 md:-top-0 -mb-52 md:-mb-0 z-30">
             {/* Ransom note title */}
             <div className="space-y-2 mb-8 -mr-12">
               {allLetterRows.map((row, rowIdx) => {
@@ -204,29 +198,12 @@ export default function Hero() {
               })}
             </div>
 
-            {/* Event details */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.4 }}
-              className="space-y-2 mb-8"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-ink/30" />
-                <span className="font-mono text-sm text-ink/60">Available for freelance & collaborations</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-ink/30" />
-                <span className="font-mono text-sm text-ink/60">Austin-based ✦ Globally loved</span>
-              </div>
-            </motion.div>
-
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6 }}
-              className="flex flex-wrap gap-4 items-center"
+              className="flex flex-wrap gap-4 items-center mb-8"
             >
               <a
                 href="#portfolio"
@@ -243,6 +220,23 @@ export default function Hero() {
               </a>
             </motion.div>
 
+            {/* Event details */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.4 }}
+              className="space-y-2 "
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-px w-12 bg-ink/30" />
+                <span className="font-mono text-sm text-ink/60">Available for freelance & collaborations</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="h-px w-12 bg-ink/30" />
+                <span className="font-mono text-sm text-ink/60">Austin-based ✦ Globally loved</span>
+              </div>
+            </motion.div>
+            
             {/* Scroll hint */}
             <motion.div
               initial={{ opacity: 0 }}

@@ -70,10 +70,8 @@ export default function CommunityService() {
       </div>
 
       {/* Decorative doodles */}
-      <motion.div
-        className="absolute top-12 right-12 text-cream/5"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      <div
+        className="absolute top-12 right-12 text-cream/5 rotate-12"
       >
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
           <circle cx="100" cy="100" r="90" />
@@ -82,7 +80,7 @@ export default function CommunityService() {
           <line x1="10" y1="100" x2="190" y2="100" />
           <line x1="100" y1="10" x2="100" y2="190" />
         </svg>
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl mx-auto relative" ref={ref}>
         {/* Header */}
@@ -93,7 +91,7 @@ export default function CommunityService() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <Heart className="text-coral float" size={28} />
+            <Heart className="text-coral " size={28} />
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-cream/50">
               Giving Back
             </p>

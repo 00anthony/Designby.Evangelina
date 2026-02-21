@@ -77,7 +77,7 @@ function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: numbe
       initial={{ opacity: 0, y: 40, rotate: -3 }}
       animate={inView ? { opacity: 1, y: 0, rotate: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 120 }}
-      className={`relative bg-white shadow-scrapbook p-6 ${t.rotate} hover:rotate-0 hover:-translate-y-2 transition-all duration-300`}
+      className={`relative bg-white shadow-scrapbook p-6 ${t.rotate} hover:rotate-0 hover:-translate-y-2 md:transition-all md:duration-300`}
     >
       {/* Tape at top */}
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 ${t.tape} rotate-[-1deg]`} />

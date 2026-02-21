@@ -48,8 +48,8 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
             >
-              <div className="w-5 h-5 rounded-full bg-coral shadow-lg" />
-              <div className="w-1 h-6 bg-coral/70 mx-auto" />
+              <div className="w-4 h-4 rounded-full bg-coral shadow-lg" />
+              <div className="w-1 h-1.5 bg-gray-300 mx-auto" />
             </motion.div>
 
             {/* Main photo frame */}
