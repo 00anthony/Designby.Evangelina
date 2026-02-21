@@ -61,7 +61,7 @@ export default function About() {
             >
               <Image 
                 src='/Headshot.PNG'
-                alt='Angel Evangelina'
+                alt='Evangelina A.'
                 width={360}
                 height={540}
                 loading="lazy"

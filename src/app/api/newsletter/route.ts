@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     });
 
     await resend.emails.send({
-      from: "Angel Evangelina <onboarding@resend.dev>",
+      from: "Design by Evangelina <onboarding@resend.dev>",
       to: email,
       subject: "You're on the Studio Notes list ✦",
       html: `
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         <p>Thanks for joining Studio Notes.</p>
         <p>I’ll send thoughtful monthly updates on design, process, and inspiration.</p>
         <br/>
-        <p>– Angel</p>
+        <p>– Evangelina</p>
       `,
     });
 

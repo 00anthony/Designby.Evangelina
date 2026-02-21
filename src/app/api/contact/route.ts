@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     // 💌 Auto-Reply to User
     // -------------------------
     await resend.emails.send({
-      from: "Angel Evangelina <onboarding@resend.dev>",
+      from: "Design by Evangelina <onboarding@resend.dev>",
       to: email,
       subject: "Got your message ✦",
       html: `
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
         <p>In the meantime, feel free to reply directly to this email if you have anything to add.</p>
         <br/>
         <p>Warmly,</p>
-        <p><strong>Angel</strong></p>
+        <p><strong>Evangelina</strong></p>
       `,
     });
 
