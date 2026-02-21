@@ -60,7 +60,7 @@ export default function About() {
               className="polaroid rotate-[-3deg] max-w-sm mx-auto"
             >
               <Image 
-                src='/Headshot.png'
+                src='/Headshot.PNG'
                 alt='Angel Evangelina'
                 width={360}
                 height={540}
