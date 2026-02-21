@@ -19,10 +19,32 @@ export default function ContactForm() {
   const [selected, setSelected] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          projectType: selected,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      setSubmitted(true);
+    } catch (err) {
+      setError("Something went wrong. Try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -164,10 +186,11 @@ export default function ContactForm() {
 
                   <button
                     type="submit"
+                    disabled={loading}
                     className="group w-full bg-ink text-cream py-4 font-handwriting text-xl flex items-center justify-center gap-3 hover:bg-coral transition-colors duration-300 shadow-scrapbook"
                   >
-                    Send Message
-                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    {loading ? "Sending..." : "Send Message"}
+                    <Send size={18} />
                   </button>
                 </motion.form>
               )}

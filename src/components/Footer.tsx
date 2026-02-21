@@ -1,10 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
 import { Instagram, Twitter, Youtube, Facebook, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+  const [newsletterError, setNewsletterError] = useState("");
+
 
   return (
     <footer className="bg-ink text-cream py-16 px-6 relative overflow-hidden">
@@ -54,20 +60,65 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-widest text-cream/30 mb-4">Studio Notes</h4>
-            <p className="font-sans text-cream/60 text-sm mb-4">
-              Monthly musings on design, process, and what's inspiring me right now.
-            </p>
-            <div className="flex gap-0">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 bg-cream/10 border border-cream/20 px-4 py-3 font-handwriting text-base text-cream placeholder:text-cream/30 focus:outline-none focus:border-sky"
-              />
-              <button className="bg-coral text-white px-4 py-3 hover:bg-coral/80 transition-colors">
-                <ArrowUp size={16} style={{ transform: "rotate(45deg)" }} />
-              </button>
-            </div>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+
+                if (!newsletterEmail) return;
+
+                setNewsletterLoading(true);
+                setNewsletterError("");
+                setNewsletterSuccess(false);
+
+                try {
+                  const res = await fetch("/api/newsletter", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: newsletterEmail }),
+                  });
+
+                  if (!res.ok) throw new Error("Failed");
+
+                  setNewsletterSuccess(true);
+                  setNewsletterEmail("");
+                } catch {
+                  setNewsletterError("Something went wrong. Try again.");
+                } finally {
+                  setNewsletterLoading(false);
+                }
+              }}
+            >
+              <div className="flex gap-0">
+                <input
+                  type="email"
+                  required
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  className="flex-1 bg-cream/10 border border-cream/20 px-4 py-3 font-handwriting text-base text-cream placeholder:text-cream/30 focus:outline-none focus:border-sky"
+                />
+
+                <button
+                  type="submit"
+                  disabled={newsletterLoading}
+                  className="bg-coral text-white px-4 py-3 hover:bg-coral/80 transition-colors"
+                >
+                  {newsletterLoading ? "..." : "Join"}
+                </button>
+              </div>
+
+              {newsletterSuccess && (
+                <p className="text-sage text-sm mt-2">
+                  You're on the list ✦
+                </p>
+              )}
+
+              {newsletterError && (
+                <p className="text-red-400 text-sm mt-2">
+                  {newsletterError}
+                </p>
+              )}
+            </form>
 
             {/* Washi tape deco */}
             <div className="mt-8 flex gap-2">
