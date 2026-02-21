@@ -102,8 +102,8 @@ export default function Hero() {
               initial={{ opacity: 0, x: -60, rotate: -8 }}
               animate={{ opacity: 1, x: 0, rotate: -5 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              whileHover={{ rotate: -1, scale: 1.05 }}
-              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer"
+        
+              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer transform-gpu"
             >
               <Image 
                 src='/Headshot.PNG'
@@ -120,8 +120,8 @@ export default function Hero() {
               initial={{ opacity: 0, x: 60, rotate: 8 }}
               animate={{ opacity: 1, x: 0, rotate: 6 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              whileHover={{ rotate: -1, scale: 1.05 }}
-              className="absolute left-80 top-8 polaroid w-52 z-10 border-4 border-coral/40 transition-transform duration-300 cursor-pointer"
+              
+              className="absolute left-80 top-8 polaroid w-52 z-10 border-4 border-coral/40 transition-transform duration-300 cursor-pointer transform-gpu"
             >
               <Image 
                 src='/porsche-bag.jpg'
@@ -138,8 +138,8 @@ export default function Hero() {
               initial={{ opacity: 0, x: 60, rotate: 8 }}
               animate={{ opacity: 1, x: 0, rotate: 6 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              whileHover={{ rotate: -1, scale: 1.05 }}
-              className="absolute left-44 top-12 polaroid w-52 rotate-[6deg] z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer"
+              
+              className="absolute left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer transform-gpu"
             >
               <Image 
                 src='/porsche-ice.JPG'
