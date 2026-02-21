@@ -2,14 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Layout, Package, Film, Globe, Sparkles } from "lucide-react";
+import { Palette, Layout, Package, Signpost, Globe, Sparkles } from "lucide-react";
 
 const services = [
   {
     icon: Palette,
     title: "Brand Identity",
     desc: "Logo systems, color palettes, typography — the full visual language your brand deserves.",
-    price: "From £1,200",
+    price: "From $500",
     tag: "Most Popular",
     tagColor: "bg-coral text-white",
     color: "from-coral/5 to-coral/10",
@@ -17,20 +17,20 @@ const services = [
     border: "border-coral/20",
   },
   {
-    icon: Layout,
-    title: "Editorial Design",
-    desc: "Magazines, lookbooks, annual reports — layout design with attention to every grid.",
-    price: "From £800",
+    icon: Signpost,
+    title: "Signage",
+    desc: "Banners, decals, vehicle wraps, and business cards that moves people — literally.",
+    price: "From $650",
     tag: null,
-    color: "from-sky/5 to-sky/10",
-    accent: "text-sky",
-    border: "border-sky/20",
+    color: "from-lavender/10 to-lavender/20",
+    accent: "text-lavender",
+    border: "border-lavender/30",
   },
   {
     icon: Package,
     title: "Packaging",
     desc: "Sustainable, shelf-stopping packaging that tells your product's story before they open it.",
-    price: "From £1,500",
+    price: "From $1,500",
     tag: "New",
     tagColor: "bg-mustard text-ink",
     color: "from-mustard/5 to-mustard/15",
@@ -38,20 +38,20 @@ const services = [
     border: "border-mustard/30",
   },
   {
-    icon: Film,
-    title: "Motion & Animation",
-    desc: "Brand animations, social content, kinetic typography that moves people — literally.",
-    price: "From £650",
+    icon: Layout,
+    title: "Editorial Design",
+    desc: "Books, magazines, calendars, programs — layout design with attention to every grid.",
+    price: "From $800",
     tag: null,
-    color: "from-lavender/10 to-lavender/20",
-    accent: "text-lavender",
-    border: "border-lavender/30",
+    color: "from-sky/5 to-sky/10",
+    accent: "text-sky",
+    border: "border-sky/20",
   },
   {
     icon: Globe,
     title: "Web Design",
     desc: "Visually striking digital experiences designed with intention and built to convert.",
-    price: "From £2,000",
+    price: "From $500",
     tag: null,
     color: "from-sage/5 to-sage/15",
     accent: "text-sage",
