@@ -102,15 +102,18 @@ export default function Hero() {
               initial={{ opacity: 0, x: -60, rotate: -8 }}
               animate={{ opacity: 1, x: 0, rotate: -5 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-        
-              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer transform-gpu"
+              style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "translateZ(0)"
+              }}
+              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer transform-gpu will-change-transform"
             >
               <Image 
                 src='/Headshot.PNG'
                 alt='Angel Evangelina'
                 width={360}
                 height={540}
-                style={{ objectFit: "cover" }}
               />
               <p className="font-handwriting text-center text-ink/60 text-sm mt-2">✦ est. 2012 ✦</p>
             </motion.div>
@@ -135,11 +138,11 @@ export default function Hero() {
 
             {/* Second polaroid */}
             <motion.div
-              initial={{ opacity: 0, x: 60, rotate: 8 }}
-              animate={{ opacity: 1, x: 0, rotate: 6 }}
+              initial={{ x: -60, rotate: -8 }}
+              animate={{ x: 0, rotate: 6, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               
-              className=" md:left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer transform-gpu"
+              className="opacity-0 absolute left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 transition-transform duration-300 cursor-pointer transform-gpu will-change-transform"
             >
               <Image 
                 src='/porsche-ice.JPG'

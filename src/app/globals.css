@@ -80,6 +80,8 @@ body::before {
   background: white;
   padding: 12px 12px 36px;
   box-shadow: 3px 3px 12px rgba(26,18,9,0.2), 6px 6px 0px rgba(26,18,9,0.05);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Torn paper edge */
