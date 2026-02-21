@@ -106,7 +106,7 @@ export default function Hero() {
               className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 transition-transform duration-300 cursor-pointer"
             >
               <Image 
-                src='/Headshot.png'
+                src='/Headshot.PNG'
                 alt='Angel Evangelina'
                 width={360}
                 height={540}
@@ -142,7 +142,7 @@ export default function Hero() {
               className="absolute left-44 top-12 polaroid w-52 rotate-[6deg] z-10 border-4 border-sky/40 hover:rotate-[4deg] transition-transform duration-300 cursor-pointer"
             >
               <Image 
-                src='/porsche-ice.jpg'
+                src='/porsche-ice.JPG'
                 alt='T.P.W. Project'
                 width={360}
                 height={800}
