@@ -104,7 +104,7 @@ export default function Hero() {
               className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 md:transition-transform md:duration-300 cursor-pointer"
             >
               <Image 
-                src='/Headshot.PNG'
+                src='/hero/Headshot.PNG'
                 alt='Evangelina A.'
                 width={360}
                 height={540}
@@ -121,7 +121,7 @@ export default function Hero() {
               className="absolute left-80 top-8 polaroid w-52 z-10 border-4 border-coral/40 md:transition-transform md:duration-300 cursor-pointer "
             >
               <Image 
-                src='/porsche-bag.jpg'
+                src='/hero/porsche-bag.jpg'
                 alt='Porsche Project'
                 width={360}
                 height={540}
@@ -139,7 +139,7 @@ export default function Hero() {
               className="absolute left-44 top-12 polaroid w-52 z-10 border-4 border-sky/40 md:transition-transform md:duration-300 cursor-pointer"
             >
               <Image 
-                src='/porsche-ice.JPG'
+                src='/hero/porsche-ice.JPG'
                 alt='T.P.W. Project'
                 width={360}
                 height={800}

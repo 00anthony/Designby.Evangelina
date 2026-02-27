@@ -4,13 +4,17 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Paperclip } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
+  //Upgrade?: add modals, sliders, links
   {
     id: "001",
-    tag: "#Visual Identity",
-    title: "Botanical Rebranding",
-    desc: "A complete visual overhaul for an organic apothecary — earthy palettes, hand-drawn botanicals, and tactile packaging.",
+    tag: "#Event Organizing / Vinyl Shirts",
+    title: "Barstool",
+    desc: "Custom vinyl jersey production and event branding for Reese's Barstool activation.",
+    coverImage: "/portfolio/group-photo.jpg",
+    alt: "",
     color: "bg-sage/20",
     accent: "text-sage",
     rotate: "-rotate-1",
@@ -18,9 +22,11 @@ const projects = [
   },
   {
     id: "002",
-    tag: "#Editorial Design",
-    title: "Ethereal Magazine",
-    desc: "Layout and typography for a quarterly art publication celebrating emerging creatives.",
+    tag: "#Signage",
+    title: "Sports Banner",
+    desc: "High-impact banner design for athletic events, combining dynamic typography and bold color blocking for maximum visibility from a distance.",
+    coverImage: "/portfolio/DVHS-CHEER-BANNER.png",
+    alt: "",
     color: "bg-blush/20",
     accent: "text-coral",
     rotate: "rotate-1",
@@ -28,9 +34,11 @@ const projects = [
   },
   {
     id: "003",
-    tag: "#Packaging",
-    title: "Terra Packaging",
-    desc: "Eco-friendly wine packaging with hand-drawn illustrations and sustainable materials.",
+    tag: "#Car Wraps / Business Cards",
+    title: "San Antonio Pets Alive",
+    desc: "Brand identity development focused on warmth, trust, and compassion — creating visuals that reflect the organization's love and advocacy for animals.",
+    coverImage: "/portfolio/SAPA-van.jpg",
+    alt: "",
     color: "bg-mustard/20",
     accent: "text-gold",
     rotate: "-rotate-2",
@@ -38,29 +46,35 @@ const projects = [
   },
   {
     id: "004",
-    tag: "#Brand Strategy",
-    title: "Nova Identity System",
-    desc: "End-to-end brand identity for a tech startup — playful yet professional, built on bold geometry.",
+    tag: "#Editorial Design",
+    title: "Horizon Magazine",
+    desc: "Editorial layout and typographic system for a quarterly art publication celebrating Porsche.",
+    coverImage: "/portfolio/horizon-magazine.jpg",
+    alt: "",
     color: "bg-sky/10",
     accent: "text-sky",
     rotate: "rotate-2",
-    tapeColor: "bg-sky/30",
+    tapeColor: "bg-lavender/40",
   },
   {
     id: "005",
-    tag: "#Motion Design",
-    title: "Solstice Animations",
-    desc: "A series of kinetic brand assets and animated campaign materials for a wellness brand.",
+    tag: "#Business Cards",
+    title: "Bombkutz",
+    desc: "Custom business cards highlighting personality and authority with personalized design.",
+    coverImage: "/portfolio/Bombkutz-card.png",
+    alt: "",
     color: "bg-lavender/20",
     accent: "text-lavender",
     rotate: "-rotate-1",
-    tapeColor: "bg-lavender/40",
+    tapeColor: "bg-sky/30",
   },
   {
     id: "006",
     tag: "#Web Design",
-    title: "Reverie Studio",
-    desc: "Digital experience design for a creative studio — immersive, scroll-driven, and hauntingly beautiful.",
+    title: "PT Roofing and Renovations",
+    desc: "Modern website design focused on clarity, trust, and conversion — structured layouts, service highlights, and streamlined contact experience.",
+    coverImage: "/portfolio/ptroofing-site.png",
+    alt: "",
     color: "bg-coral/10",
     accent: "text-coral",
     rotate: "rotate-1",
@@ -84,24 +98,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 ${project.tapeColor} rotate-[-1deg] z-10`} />
 
       <div className={`${project.color} ${project.rotate} border-2 border-ink/10 bg-white p-6 shadow-scrapbook hover:shadow-scrapbook-lg hover:-translate-y-2 hover:rotate-0 transition-all duration-300 cursor-pointer`}>
-        {/* Card image placeholder */}
-        <div className="w-full h-48 bg-gradient-to-br from-cream-dark to-cream mb-4 relative overflow-hidden">
+        {/* Cover Image */}
+        <div className="relative w-full h-56 mb-4 overflow-hidden rounded-sm">
+          <Image
+            src={project.coverImage}
+            alt={project.alt}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={index < 2} // preload first 2
+          />
+
+          {/* ID badge overlay */}
           <div className="absolute inset-0 flex items-end justify-end p-3">
-            <span className="font-mono text-xs text-ink/30 bg-white/60 px-2 py-1">{project.id}</span>
-          </div>
-          {/* Decorative pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%">
-              <defs>
-                <pattern id={`grid-${index}`} width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a1209" strokeWidth="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill={`url(#grid-${index})`}/>
-            </svg>
-          </div>
-          <div className="absolute bottom-4 left-4 font-display text-4xl text-ink/10">
-            {project.id}
+            <span className="font-mono text-xs text-ink/70 bg-white/80 px-2 py-1 backdrop-blur-sm">
+              {project.id}
+            </span>
           </div>
         </div>
 
