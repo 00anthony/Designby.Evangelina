@@ -2,52 +2,43 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Heart, Users, BookOpen, TreePine, Brush, Award } from "lucide-react";
+import { Heart, Users, HeartHandshake, Mic, } from "lucide-react";
+import Image from "next/image";
+
 
 const initiatives = [
   {
-    icon: BookOpen,
-    title: "Design for Kids",
-    desc: "Monthly workshops teaching typography and illustration to children aged 8–14 in underserved Austin communities.",
-    hours: "40 hrs/year",
+    icon: HeartHandshake,
+    title: "Community Cancer Benefit Initiatives",
+    desc: "Organizing and designing fundraising events in support of local families battling cancer — from custom event branding and large-scale banners to coordinated promotional materials that amplify community turnout and financial impact.",
+    hours: "Annual Fundraising Support",
     color: "bg-sky/15",
     accent: "text-sky",
     border: "border-sky/20",
-    tag: "Education",
+    tag: "Community Care",
     tagBg: "bg-sky text-white",
   },
   {
-    icon: TreePine,
-    title: "Green Brands Initiative",
-    desc: "Pro bono branding for environmental nonprofits and sustainability startups working toward a better planet.",
-    hours: "60 hrs/year",
+    icon: Mic,
+    title: "On-Point Reentry Conference",
+    desc: "Invited speaker and creative mentor for individuals transitioning from incarceration — sharing personal growth strategies, branding education, and practical tools for rebuilding identity, confidence, and professional direction.",
+    hours: "60+ hrs/year",
     color: "bg-sage/15",
     accent: "text-sage",
     border: "border-sage/20",
-    tag: "Environment",
+    tag: "Advocacy",
     tagBg: "bg-sage text-white",
   },
   {
-    icon: Brush,
-    title: "Mural Project",
-    desc: "Collaborating with local councils to bring murals and public art to grey urban walls across East Austin.",
-    hours: "80 hrs/year",
+    icon: Users,
+    title: "National Association of Reentry Professionals Conference",
+    desc: "Collaborating with national leaders and community organizers to inspire second chances through creative empowerment, public speaking, and strategic design support for reentry-focused programs.",
+    hours: "National Conference Engagement",
     color: "bg-coral/10",
     accent: "text-coral",
     border: "border-coral/20",
-    tag: "Public Art",
+    tag: "Empowerment",
     tagBg: "bg-coral text-white",
-  },
-  {
-    icon: Users,
-    title: "Women in Design",
-    desc: "Mentoring the next generation of female designers through portfolio reviews, career chats, and industry access.",
-    hours: "50 hrs/year",
-    color: "bg-blush/15",
-    accent: "text-blush",
-    border: "border-blush/30",
-    tag: "Mentorship",
-    tagBg: "bg-blush text-ink",
   },
 ];
 
@@ -68,20 +59,7 @@ export default function CommunityService() {
           <rect width="100%" height="100%" fill="url(#diagonal)"/>
         </svg>
       </div>
-
-      {/* Decorative doodles */}
-      <div
-        className="absolute top-12 right-12 text-cream/5 rotate-12"
-      >
-        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
-          <circle cx="100" cy="100" r="90" />
-          <circle cx="100" cy="100" r="60" />
-          <circle cx="100" cy="100" r="30" />
-          <line x1="10" y1="100" x2="190" y2="100" />
-          <line x1="100" y1="10" x2="100" y2="190" />
-        </svg>
-      </div>
-
+          
       <div className="max-w-7xl mx-auto relative" ref={ref}>
         {/* Header */}
         <motion.div
@@ -105,35 +83,101 @@ export default function CommunityService() {
           </p>
         </motion.div>
 
-        {/* Initiative cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          {initiatives.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              whileHover={{ scale: 1.02 }}
-              className={`${item.color} border ${item.border} p-6 relative group`}
-            >
-              {/* Tag */}
-              <span className={`absolute top-4 right-4 ${item.tagBg} px-3 py-1 font-mono text-xs tracking-widest`}>
-                {item.tag}
-              </span>
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* LEFT: Initiative List */}
+          <div className="flex flex-col gap-6">
+            {initiatives.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -40 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+                className={`${item.color} border ${item.border} p-6 relative group`}
+              >
+                <span className={`absolute top-4 right-4 ${item.tagBg} px-3 py-1 font-mono text-xs tracking-widest`}>
+                  {item.tag}
+                </span>
 
-              <div className={`${item.accent} mb-4`}>
-                <item.icon size={28} strokeWidth={1.5} />
-              </div>
+                <div className={`${item.accent} mb-4`}>
+                  <item.icon size={28} strokeWidth={1.5} />
+                </div>
 
-              <h3 className="font-serif text-xl font-bold text-cream mb-2">{item.title}</h3>
-              <p className="font-sans text-cream/60 text-sm leading-relaxed mb-4">{item.desc}</p>
+                <h3 className="font-serif text-xl font-bold text-cream mb-2">
+                  {item.title}
+                </h3>
 
-              <div className="flex items-center gap-2">
-                <div className="h-px flex-1 bg-cream/10" />
-                <span className={`font-handwriting text-base ${item.accent}`}>{item.hours}</span>
-              </div>
-            </motion.div>
-          ))}
+                <p className="font-sans text-cream/60 text-sm leading-relaxed mb-4">
+                  {item.desc}
+                </p>
+
+                <div className="flex items-center gap-2">
+                  <div className="h-px flex-1 bg-cream/10" />
+                  <span className={`font-handwriting text-base ${item.accent}`}>
+                    {item.hours}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* RIGHT: Photo Collage */}
+          <div className="relative h-[520px] mt-12 lg:mt-0">
+          {/* Main polaroid */}
+          <motion.div
+            initial={{ opacity: 0, y: 40, rotate: -8 }}
+            animate={{ opacity: 1, y: 0, rotate: -5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="absolute top-20 -left-8 md:left-0 polaroid w-64"
+          >
+            <Image
+              src="/communityService/shirt.jpg"
+              alt="Community event shirt"
+              width={360}
+              height={540}
+            />
+            <p className="font-handwriting text-center text-ink/60 text-sm mt-2">
+              ✦ 2023 ✦
+            </p>
+          </motion.div>
+
+          {/* Third Photo*/}
+          <motion.div
+            initial={{ opacity: 0, y: 40, rotate: 8 }}
+            animate={{ opacity: 1, y: 0, rotate: 8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="absolute top-20 -right-8 md:right-32 polaroid w-52 border-4 border-coral/40"
+          >
+            <Image
+              src="/communityService/bbq.png"
+              alt="Community BBQ"
+              width={360}
+              height={540}
+            />
+            <p className="font-handwriting text-center text-sky text-xs mt-1">
+              ✦ 2024 ✦
+            </p>
+          </motion.div>
+
+          {/* Second photo*/}
+          <motion.div
+            initial={{ opacity: 0, y: 40, rotate: 6 }}
+            animate={{ opacity: 1, y: 0, rotate: 6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="absolute bottom-10 left-40 polaroid w-52 border-4 border-sky/40"
+          >
+            <Image
+              src="/communityService/speech.png"
+              alt="Community speech"
+              width={360}
+              height={800}
+            />
+            <p className="font-handwriting text-center text-sky text-xs mt-1">
+              ✦ 2024 ✦
+            </p>
+          </motion.div>
+        </div>
         </div>
 
         {/* Impact stats */}
