@@ -1,38 +1,38 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Seraphina Vale",
-    role: "CEO, Moonstone Apothecary",
-    text: "Evangelina's eye for detail and organic aesthetic transformed our brand. Her work feels timeless and deeply intentional.",
+    name: "Justine S.",
+    role: "Owner, Bombkutz Barbershop",
+    text: "Angel is the one I trust with all my shop branding -- decals, business cards, printables and more -- and she never misses. Her work is always clean, high quality, and exactly how I envision it. She's super easy to work with, pays attention to every detail, and always comes through on time. Everthing she makes for my shop looks professional and helps my brand stand out. If you're a business owner and need custom print work done right, Angel is the person to go to. Highly recommend her.",
     stars: 5,
     tape: "bg-sky/30",
     rotate: "-rotate-1",
-    initials: "SV",
+    initials: "JS",
     color: "bg-sage/30",
   },
   {
-    name: "Julian Thorne",
-    role: "Creative Director, Arch Studio",
-    text: "Collaborating with Evangelina was seamless. She truly understands how to translate abstract concepts into visual gold.",
+    name: "Mary Moran",
+    role: "CEO, On-Point Re-Entry Consortium, Inc.",
+    text: "Angel design our program for a global reentry summit in 2024, and her design and layout were BEAUTIFUL! All the attendees remarked on how awesome the program looked!!! She is someone who takes pride in her work, and she is very talented. I highly recommend her to anyone who is looking for a great graphic designer. She is your person!!!",
     stars: 5,
     tape: "bg-blush/40",
     rotate: "rotate-1",
-    initials: "JT",
+    initials: "MM",
     color: "bg-blush/40",
   },
   {
-    name: "Elena Rossi",
-    role: "Founder, Terra Wines",
-    text: "The packaging design exceeded all expectations. Our sales increased by 40% after the rebrand. An artist in the truest sense.",
+    name: "Rosetta Taylor",
+    role: "Founder, National Association of Reentry Professionals (NARP)",
+    text: "Evangelina is creative with excellent precision. She is dependable and has wonderful customer service skills.",
     stars: 5,
     tape: "bg-mustard/40",
     rotate: "-rotate-2",
-    initials: "ER",
+    initials: "RT",
     color: "bg-mustard/40",
   },
   {
@@ -70,6 +70,9 @@ const testimonials = [
 function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [expanded, setExpanded] = useState(false);
+
+  const isLong = t.text.length > 220; // threshold for showing button
 
   return (
     <motion.div
@@ -77,28 +80,47 @@ function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: numbe
       initial={{ opacity: 0, y: 40, rotate: -3 }}
       animate={inView ? { opacity: 1, y: 0, rotate: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 120 }}
-      className={`relative bg-white shadow-scrapbook p-6 ${t.rotate} hover:rotate-0 hover:-translate-y-2 md:transition-all md:duration-300`}
+      className={`relative bg-white shadow-scrapbook p-6 ${t.rotate} min-h-[300px] hover:rotate-0 hover:-translate-y-2 md:transition-all md:duration-300`}
     >
-      {/* Tape at top */}
+      {/* Tape */}
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 ${t.tape} rotate-[-1deg]`} />
 
-      {/* Big quote mark */}
       <div className="text-sky/20 mb-3">
         <Quote size={36} />
       </div>
 
-      {/* Stars */}
       <div className="flex gap-1 mb-3">
         {[...Array(t.stars)].map((_, i) => (
           <Star key={i} size={14} className="text-mustard fill-mustard" />
         ))}
       </div>
 
-      <p className="font-handwriting text-ink text-lg leading-relaxed mb-6">
-        "{t.text}"
-      </p>
+      {/* TEXT CONTAINER */}
+      <motion.div
+        animate={{ height: expanded ? "auto" : 140 }}
+        transition={{ duration: 0.35 }}
+        className="overflow-hidden relative"
+      >
+        <p className="font-handwriting text-ink text-lg leading-relaxed">
+          "{t.text}"
+        </p>
 
-      <div className="flex items-center gap-3 pt-4 border-t border-ink/10">
+        {!expanded && isLong && (
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent" />
+        )}
+      </motion.div>
+
+      {/* READ MORE BUTTON */}
+      {isLong && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-2 text-xs font-mono uppercase tracking-wider text-sky hover:underline"
+        >
+          {expanded ? "Show Less" : "Read More"}
+        </button>
+      )}
+
+      <div className="flex items-center gap-3 pt-4 border-t border-ink/10 mt-4">
         <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center font-mono text-xs font-bold text-ink/60`}>
           {t.initials}
         </div>
