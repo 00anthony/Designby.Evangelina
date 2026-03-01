@@ -118,7 +118,7 @@ export default function About() {
 
               <p className="font-mono text-xs text-coral uppercase tracking-widest mb-2">A Bit of History</p>
               <h2 className="font-serif text-4xl font-bold text-ink mb-6 leading-tight">
-                Crafting Identity<br />Since 2012
+                Crafting Identity<br />Since 2006
               </h2>
 
               <p className="font-sans text-ink/70 leading-relaxed mb-4">

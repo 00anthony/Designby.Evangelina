@@ -152,7 +152,7 @@ export default function Testimonials() {
             "Every project is a love letter to the brand."
           </p>
           <p className="font-mono text-xs uppercase tracking-widest mt-3 text-white/60">
-            — Evangelina, 2024
+            — Evangelina, 2026
           </p>
         </motion.div>
       </div>
