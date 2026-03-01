@@ -35,36 +35,7 @@ const testimonials = [
     initials: "RT",
     color: "bg-mustard/40",
   },
-  {
-    name: "Marcus Chen",
-    role: "Head of Brand, Luminary Tech",
-    text: "Working with Evangelina on our identity system was a game-changer. Every touchpoint now feels cohesive and intentional.",
-    stars: 5,
-    tape: "bg-sky/30",
-    rotate: "rotate-1",
-    initials: "MC",
-    color: "bg-sky/30",
-  },
-  {
-    name: "Isabelle Moreau",
-    role: "Editor, Reverie Magazine",
-    text: "She captured the soul of our publication perfectly. The layout work was beyond anything we imagined. A true collaborator.",
-    stars: 5,
-    tape: "bg-lavender/40",
-    rotate: "-rotate-1",
-    initials: "IM",
-    color: "bg-lavender/40",
-  },
-  {
-    name: "Thomas Reid",
-    role: "Founder, Kindred Studio",
-    text: "Evangelina brought a level of craft and care that we rarely see. Our brand identity now perfectly reflects our values.",
-    stars: 5,
-    tape: "bg-coral/20",
-    rotate: "rotate-2",
-    initials: "TR",
-    color: "bg-coral/20",
-  },
+  
 ];
 
 function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: number }) {
