@@ -122,16 +122,15 @@ export default function About() {
               </h2>
 
               <p className="font-sans text-ink/70 leading-relaxed mb-4">
-                I started with a sketchbook and a dream in a small Austin studio. Today, I help
-                global brands find their visual rhythm through organic design and bold experimentation.
+                My journey began in the garage of my home in San Antonio, built on hard work, determination, and a vision to create something meaningful. When I returned home to Austin, I didn't just restart -- I rebuilt. Through dedication, over 19 years of hands-on experience, and the power of word of mouth, my business grew stronger than ever. 
               </p>
 
               <p className="font-sans text-ink/70 leading-relaxed mb-6">
-                My philosophy?{" "}
+                What drives me is simple:{" "}
                 <span className="font-handwriting text-sky text-xl" style={{ textDecoration: "underline wavy", textDecorationColor: "#4a9cc8" }}>
-                  Keep it real.
+                  Helping
                 </span>
-                {" "}I believe the best designs come from a mix of raw intuition and strategic precision.
+                {" "}my clients reach their goals with confidence, quality, and integrity -- without ever stretching their budgets beyond what's fair. Every project is personal, and every success story is shared
               </p>
 
               {/* Stats */}
