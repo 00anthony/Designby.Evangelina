@@ -109,7 +109,7 @@ export default function Hero() {
                 width={360}
                 height={540}
               />
-              <p className="font-handwriting text-center text-ink/60 text-sm mt-2">✦ est. 2012 ✦</p>
+              <p className="font-handwriting text-center text-ink/60 text-sm mt-2">✦ est. 2006 ✦</p>
             </motion.div>
 
             {/* Third polaroid */}
