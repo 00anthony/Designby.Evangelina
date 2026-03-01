@@ -184,10 +184,10 @@ export default function Portfolio() {
           className="text-center mt-16"
         >
           <a
-            href="#"
+            href="#contact"
             className="inline-flex items-center gap-2 border-2 border-ink text-ink font-handwriting text-xl px-8 py-3 rotate-[-1deg] hover:rotate-0 hover:bg-ink hover:text-cream transition-all duration-200 shadow-scrapbook"
           >
-            View All Projects →
+            Learn More →
           </a>
         </motion.div>
       </div>

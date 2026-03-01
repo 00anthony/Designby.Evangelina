@@ -9,7 +9,7 @@ const links = [
   { label: "Projects", href: "#portfolio" },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Giving Back", href: "#community" },
 ];
 
 export default function Navbar() {

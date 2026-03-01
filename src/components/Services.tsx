@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Palette, Layout, Package, Signpost, Globe, Sparkles } from "lucide-react";
@@ -75,41 +76,46 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: index * 0.08, duration: 0.5 }}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className={`relative bg-gradient-to-br ${service.color} border-2 ${service.border} p-6 shadow-scrapbook group cursor-pointer`}
+    <Link
+      href={`/?service=${encodeURIComponent(service.title)}#contact`}
+      className="block"
     >
-      {/* Corner fold */}
-      <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-0 h-0 border-l-[32px] border-b-[32px] border-l-transparent border-b-white opacity-60" />
-      </div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: index * 0.08, duration: 0.5 }}
+        whileHover={{ y: -6, transition: { duration: 0.2 } }}
+        className={`relative bg-gradient-to-br ${service.color} border-2 ${service.border} p-6 shadow-scrapbook group cursor-pointer`}
+      >
+        {/* Corner fold */}
+        <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden">
+          <div className="absolute top-0 right-0 w-0 h-0 border-l-[32px] border-b-[32px] border-l-transparent border-b-white opacity-60" />
+        </div>
 
-      {/* Badge */}
-      {service.tag && (
-        <span className={`absolute -top-3 right-6 ${service.tagColor} px-3 py-1 font-mono text-xs tracking-widest rotate-[1deg] shadow-tape`}>
-          {service.tag}
-        </span>
-      )}
+        {/* Badge */}
+        {service.tag && (
+          <span className={`absolute -top-3 right-6 ${service.tagColor} px-3 py-1 font-mono text-xs tracking-widest rotate-[1deg] shadow-tape`}>
+            {service.tag}
+          </span>
+        )}
 
-      {/* Icon */}
-      <div className={`${service.accent} mb-4 group-hover:scale-110 transition-transform duration-200`}>
-        <service.icon size={32} strokeWidth={1.5} />
-      </div>
+        {/* Icon */}
+        <div className={`${service.accent} mb-4 group-hover:scale-110 transition-transform duration-200`}>
+          <service.icon size={32} strokeWidth={1.5} />
+        </div>
 
-      <h3 className="font-serif text-xl font-bold text-ink mb-2">{service.title}</h3>
-      <p className="font-sans text-sm text-ink/60 leading-relaxed mb-4">{service.desc}</p>
+        <h3 className="font-serif text-xl font-bold text-ink mb-2">{service.title}</h3>
+        <p className="font-sans text-sm text-ink/60 leading-relaxed mb-4">{service.desc}</p>
 
-      <div className="flex items-center justify-between">
-        <span className={`font-handwriting text-lg ${service.accent} font-bold`}>{service.price}</span>
-        <span className="font-handwriting text-ink/30 group-hover:text-ink transition-colors text-sm">
-          Learn more →
-        </span>
-      </div>
-    </motion.div>
+        <div className="flex items-center justify-between">
+          <span className={`font-handwriting text-lg ${service.accent} font-bold`}>{service.price}</span>
+          <span className="font-handwriting text-ink/30 group-hover:text-ink transition-colors text-sm">
+            Learn more →
+          </span>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
 

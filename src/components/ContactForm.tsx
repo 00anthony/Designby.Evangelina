@@ -1,14 +1,16 @@
 "use client";
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Send, MapPin, Mail, Clock, CheckCircle } from "lucide-react";
 
 const projectTypes = [
   "Brand Identity",
+  "Signage",
   "Editorial Design",
   "Packaging",
-  "Motion Design",
+  "Event Organization",
   "Web Design",
   "Something else ✦",
 ];
@@ -21,6 +23,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const searchParams = useSearchParams();
+  const selectedService = searchParams.get("service");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +50,12 @@ export default function ContactForm() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (selectedService && projectTypes.includes(selectedService)) {
+      setSelected(selectedService);
+    }
+  }, [selectedService]);
 
   return (
     <section id="contact" className="py-24 px-6 bg-cream grid-bg relative overflow-hidden">
