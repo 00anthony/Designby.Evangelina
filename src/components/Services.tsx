@@ -20,7 +20,7 @@ const services = [
   {
     icon: Signpost,
     title: "Signage",
-    desc: "Banners, decals, vehicle wraps, and business cards that moves people — literally.",
+    desc: "Banners, decals, vehicle wraps, outdoor signage, and business cards that moves people — literally.",
     price: "From $25",
     tag: null,
     color: "from-lavender/10 to-lavender/20",
@@ -31,7 +31,7 @@ const services = [
     icon: Package,
     title: "Packaging",
     desc: "Sustainable, shelf-stopping packaging that tells your product's story before they open it.",
-    price: "From $1,500",
+    price: "From $350",
     tag: "New",
     tagColor: "bg-mustard text-ink",
     color: "from-mustard/5 to-mustard/15",

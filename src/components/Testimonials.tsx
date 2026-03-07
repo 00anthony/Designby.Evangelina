@@ -35,6 +35,16 @@ const testimonials = [
     initials: "RT",
     color: "bg-mustard/40",
   },
+  {
+    name: "Kristy Ward",
+    role: "Author, Menopause Mijas",
+    text: "Angel was absolutely incredible to work with on my Menopause Mijas book. The editing process is tedious and overwhelming, and she took all of that stress off my plate. Not only did she handle the technical details beautifully, but she also offered thoughtful feedback that made the book even stronger. She is professional, detail oriented, and truly cares about the fianl product. I'm so grateful for her talent and support. Highly recommend.",
+    stars: 5,
+    tape: "bg-lavender/40",
+    rotate: "rotate-2",
+    initials: "KW",
+    color: "bg-green-200/40",
+  }
   
 ];
 

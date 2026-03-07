@@ -101,7 +101,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -60, rotate: -8 }}
               animate={{ opacity: 1, x: 0, rotate: -5 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 md:transition-transform md:duration-300 cursor-pointer"
+              className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 md:transition-transform md:duration-300 "
             >
               <Image 
                 src='/hero/Headshot.PNG'
@@ -259,10 +259,12 @@ export default function Hero() {
         transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-6 flex gap-4"
       >
-        {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
+        {[Facebook].map((Icon, i) => (
           <a
             key={i}
-            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/people/Design-by-Evangelina/61574141763050/"
             className="w-10 h-10 border-2 border-ink/20 rounded-full flex items-center justify-center text-ink/50 hover:text-ink hover:border-ink transition-colors"
           >
             <Icon size={16} />
