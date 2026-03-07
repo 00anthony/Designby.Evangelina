@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
-import Services from "@/components/Services";
-import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
-import CommunityService from "@/components/CommunityService";
-import ContactForm from "@/components/ContactForm";
+import Hero from "@/components/home/Hero";
+import Portfolio from "@/components/home/Portfolio";
+import Services from "@/components/home/Services";
+import About from "@/components/home/About";
+import Testimonials from "@/components/home/Testimonials";
+import CommunityService from "@/components/home/CommunityService";
+import ContactForm from "@/components/home/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function Home() {

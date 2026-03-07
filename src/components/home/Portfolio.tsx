@@ -6,7 +6,7 @@ import { useRef, useState, useEffect} from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, Paperclip } from "lucide-react";
 import Image from "next/image";
-import Modal from "./Modal";
+import Modal from "../Modal";
 
 const projects = [
   //Upgrade?: add modals, sliders, links
