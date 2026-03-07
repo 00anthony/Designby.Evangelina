@@ -179,7 +179,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             src={project.images?.[current]}
             alt={project.alt}
             fill
-            placeholder="blur"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={index < 2}
