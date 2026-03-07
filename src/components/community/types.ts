@@ -6,9 +6,10 @@ export interface EventDetail {
 }
 
 export interface PhotoSlotConfig {
-  label: string;
+  label?: string;
   rotate: string;
-  image?: string;
+  src: string;
+  alt?: string;
 }
 
 export interface EventConfig {

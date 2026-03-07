@@ -132,7 +132,7 @@ export default function CommunityService() {
             className="absolute top-20 -left-8 md:left-0 polaroid w-64"
           >
             <Image
-              src="/communityService/shirt.jpg"
+              src="/communityService/on-point-shirt.jpg"
               alt="Community event shirt"
               width={360}
               height={540}
@@ -150,7 +150,7 @@ export default function CommunityService() {
             className="absolute top-20 -right-8 md:right-32 polaroid w-52 border-4 border-coral/40"
           >
             <Image
-              src="/communityService/bbq.png"
+              src="/communityService/cancer-bbq.png"
               alt="Community BBQ"
               width={360}
               height={540}

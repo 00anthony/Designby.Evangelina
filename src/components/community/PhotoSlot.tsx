@@ -1,16 +1,18 @@
 'use client'
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface PhotoSlotProps {
-  label: string;
+  label?: string;
   rotate: string;
   accentColor: string;
   index: number;
-  image?: string;
+  src: string;
+  alt?: string;
 }
 
-export default function PhotoSlot({ label, rotate, accentColor, index }: PhotoSlotProps) {
+export default function PhotoSlot({ label, rotate, accentColor, index, src, alt }: PhotoSlotProps) {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -26,24 +28,15 @@ export default function PhotoSlot({ label, rotate, accentColor, index }: PhotoSl
     >
       {/* Polaroid frame */}
       <div
-        className="bg-white transition-all duration-300"
-        style={{
-          padding: "10px 10px 36px",
-          boxShadow: hovered
-            ? "6px 6px 24px rgba(26,18,9,0.25), 10px 10px 0px rgba(26,18,9,0.08)"
-            : "3px 3px 12px rgba(26,18,9,0.2), 6px 6px 0px rgba(26,18,9,0.05)",
-        }}
+        className="polaroid "
       >
-        {/* Photo area */}
-        <div
-          className="w-full h-44 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
-          style={{ background: `linear-gradient(135deg, ${accentColor}18, ${accentColor}30)` }}
-        >
-          
-        </div>
-
-        {/* Caption line */}
-        <div className="mt-2 h-px w-3/4 mx-auto bg-gray-200 rounded" />
+        <Image 
+          src={src}
+          alt={alt || "Community event photo"}
+          width={360}
+          height={540}
+        />
+        <p className="font-handwriting text-center text-ink/60 text-sm mt-2">{label}</p>
       </div>
     </motion.div>
   );

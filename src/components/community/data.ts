@@ -28,11 +28,20 @@ export const events: EventConfig[] = [
     stickyNoteColor: "#ffd6cc",
     tapeColor: "rgba(232,93,63,0.3)",
     icon: Ribbon,
-    photoLayout: "row",
+    photoLayout: "grid",
     photos: [
-      { label: "Event Photo", rotate: "-3deg" },
-      { label: "Community Photo", rotate: "2deg" },
-      { label: "Highlights", rotate: "-1deg" },
+      {
+        src: "/communityService/cancer-poster.png",
+        alt: "Community cancer benefit poster",
+        rotate: "rotate-[-2deg]",
+        label: "7/12/2025",
+      },
+      {
+        src: "/communityService/cancer-bbq.png",
+        alt: "Evangelina barbequeing",
+        rotate: "rotate-[1.5deg]",
+        label: "7/12/2025",
+      },
     ],
     reversed: false,
     extra:
@@ -58,10 +67,29 @@ export const events: EventConfig[] = [
     icon: Users,
     photoLayout: "grid",
     photos: [
-      { label: "Conference Photo", rotate: "-2deg" },
-      { label: "Panel Discussion", rotate: "2deg" },
-      { label: "Workshop", rotate: "-1.5deg" },
-      { label: "Networking", rotate: "1deg" },
+      {
+        src: "/communityService/on-point-program.png",
+        alt: "",
+        rotate: "rotate-[-2deg]",
+        label: "2024",
+      },
+      {
+        src: "/communityService/on-point-group.png",
+        alt: "",
+        rotate: "rotate-[-2deg]",
+      },
+      {
+        src: "/communityService/on-point-group2.jpg",
+        alt: "",
+        rotate: "rotate-[-2deg]",
+        
+      },
+      {
+        src: "/communityService/on-point-shirt.jpg",
+        alt: "",
+        rotate: "rotate-[-2deg]",
+        label: "<3",
+      },
     ],
     reversed: true,
     extra:
@@ -87,9 +115,12 @@ export const events: EventConfig[] = [
     icon: Award,
     photoLayout: "row",
     photos: [
-      { label: "Keynote Photo", rotate: "2deg" },
-      { label: "Award Ceremony", rotate: "-2deg" },
-      { label: "Expo Floor", rotate: "1.5deg" },
+      {
+        src: "/communityService/coming-soon.jpg",
+        alt: "coming soon",
+        rotate: "rotate-[-2deg]",
+        label: "Coming soon",
+      },
     ],
     reversed: false,
     extra:

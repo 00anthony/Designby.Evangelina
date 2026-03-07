@@ -191,7 +191,7 @@ export default function EventSection({ event, index }: EventSectionProps) {
           <div className={`relative${reversed ? " lg:col-start-1 lg:row-start-1" : ""}`}>
             {/* Tape strip above photos */}
             <div
-              className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 z-10"
+              className="absolute top-1 left-40 -translate-x-1/2 w-40 h-6 z-10"
               style={{ background: tapeColor, transform: "rotate(-1.5deg)" }}
               aria-hidden="true"
             />
@@ -213,6 +213,8 @@ export default function EventSection({ event, index }: EventSectionProps) {
                   rotate={photo.rotate}
                   accentColor={accentColor}
                   index={i}
+                  src={photo.src}
+                  alt={photo.alt}
                 />
               ))}
             </motion.div>
@@ -222,7 +224,7 @@ export default function EventSection({ event, index }: EventSectionProps) {
               initial={{ scaleX: 0 }}
               animate={inView ? { scaleX: 1 } : {}}
               transition={{ delay: 0.8 }}
-              className="absolute bottom-4 right-0 w-20 h-5 origin-right"
+              className="absolute top-1/2 right-2 w-32 h-5 origin-right"
               style={{ background: `${accentColor}35`, transform: "rotate(6deg)" }}
               aria-hidden="true"
             />
@@ -230,8 +232,8 @@ export default function EventSection({ event, index }: EventSectionProps) {
               initial={{ scaleX: 0 }}
               animate={inView ? { scaleX: 1 } : {}}
               transition={{ delay: 0.9 }}
-              className="absolute -bottom-2 left-4 w-16 h-4 origin-left"
-              style={{ background: tapeColor, transform: "rotate(-4deg)" }}
+              className="absolute bottom-16 -left-2 w-24 h-4 origin-left"
+              style={{ background: tapeColor, transform: "rotate(-10deg)" }}
               aria-hidden="true"
             />
           </div>
