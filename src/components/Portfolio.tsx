@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect} from "react";
+import { useRouter } from "next/navigation";
 import { ArrowUpRight, Paperclip } from "lucide-react";
 import Image from "next/image";
+import Modal from "./Modal";
 
 const projects = [
   //Upgrade?: add modals, sliders, links
@@ -13,7 +15,11 @@ const projects = [
     tag: "#Event Organizing / Vinyl Shirts",
     title: "Barstool",
     desc: "Custom vinyl jersey production and event branding for Reese's Barstool activation.",
-    coverImage: "/portfolio/group-photo.jpg",
+    images: [
+      "/portfolio/barstool-group-photo.jpg",
+      "/portfolio/barstool-in-action.jpg",
+      "/portfolio/barstool-solo-in-action.jpg"
+    ],
     alt: "",
     color: "bg-sage/20",
     accent: "text-sage",
@@ -25,7 +31,9 @@ const projects = [
     tag: "#Signage",
     title: "Sports Banner",
     desc: "High-impact banner design for athletic events, combining dynamic typography and bold color blocking for maximum visibility from a distance.",
-    coverImage: "/portfolio/DVHS-CHEER-BANNER.png",
+    images: [
+      "/portfolio/DVHS-CHEER-BANNER.png"
+    ],
     alt: "",
     color: "bg-blush/20",
     accent: "text-coral",
@@ -37,7 +45,11 @@ const projects = [
     tag: "#Car Wraps / Business Cards",
     title: "San Antonio Pets Alive",
     desc: "Brand identity development focused on warmth, trust, and compassion — creating visuals that reflect the organization's love and advocacy for animals.",
-    coverImage: "/portfolio/SAPA-van.jpg",
+    images: [
+      "/portfolio/SAPA-van.jpg",
+      "/portfolio/SAPA-van-back.jpg",
+      "/portfolio/SAPA-business-card.png"
+    ],
     alt: "",
     color: "bg-mustard/20",
     accent: "text-gold",
@@ -49,7 +61,11 @@ const projects = [
     tag: "#Editorial Design",
     title: "Horizon Magazine",
     desc: "Editorial layout and typographic system for a quarterly art publication celebrating Porsche.",
-    coverImage: "/portfolio/horizon-magazine.jpg",
+    images: [
+      "/portfolio/horizon-magazine.jpg",
+      "/portfolio/horizon-magazines.jpg",
+      "/portfolio/horizon-bag.jpg"
+    ],
     alt: "",
     color: "bg-sky/10",
     accent: "text-sky",
@@ -61,7 +77,11 @@ const projects = [
     tag: "#Business Cards",
     title: "Bombkutz",
     desc: "Custom business cards highlighting personality and authority with personalized design.",
-    coverImage: "/portfolio/Bombkutz-card.png",
+    images: [
+      "/portfolio/Bombkutz-card.png",
+      "/portfolio/Bombkutz-promo.PNG",
+
+    ],
     alt: "",
     color: "bg-lavender/20",
     accent: "text-lavender",
@@ -71,9 +91,13 @@ const projects = [
   {
     id: "006",
     tag: "#Book Cover Design",
-    title: "Menopause Mijas",
+    title: "Menopause Mijas / When Enchiladas Fly",
     desc: "A powerful design for a powerful message in loving oursleves the way we always deserved.",
-    coverImage: "/portfolio/menopause.png",
+    images: [
+      "/portfolio/book-menopause.png",
+      "/portfolio/book-enchiladas.jpg"
+
+    ],
     alt: "",
     color: "bg-coral/10",
     accent: "text-coral",
@@ -85,6 +109,46 @@ const projects = [
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const router = useRouter();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [current, setCurrent] = useState(0);
+  const totalImages = project.images?.length || 1;
+
+  // --- Swipe Logic ---
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+
+    if (diff > 50) nextImage();
+    if (diff < -50) prevImage();
+
+    touchStartX.current = null;
+  };
+
+  const nextImage = () => {
+    setCurrent((prev) => (prev + 1) % totalImages);
+  };
+
+  const prevImage = () => {
+    setCurrent((prev) => (prev - 1 + totalImages) % totalImages);
+  };
+
+  useEffect(() => {
+    if (!inView || !project.images) return;
+
+    project.images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, [inView, project.images]);
 
   return (
     <motion.div
@@ -97,19 +161,56 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       {/* Tape */}
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 ${project.tapeColor} rotate-[-1deg] z-10`} />
 
-      <div className={`${project.color} ${project.rotate} border-2 border-ink/10 bg-white p-6 shadow-scrapbook hover:shadow-scrapbook-lg hover:-translate-y-2 hover:rotate-0 transition-all duration-300 cursor-pointer`}>
-        {/* Cover Image */}
-        <div className="relative w-full h-56 mb-4 overflow-hidden rounded-sm">
+      <div
+        onClick={() => router.push("/portfolio")}
+        className={`${project.color} ${project.rotate} border-2 border-ink/10 bg-white p-6 shadow-scrapbook hover:shadow-scrapbook-lg hover:-translate-y-2 hover:rotate-0 transition-all duration-300 cursor-pointer`}
+      >        
+        {/* Image Slider */}
+        <div
+          className="relative w-full h-56 mb-4 overflow-hidden rounded-sm"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsModalOpen(true);
+          }}
+        >
           <Image
-            src={project.coverImage}
+            src={project.images?.[current]}
             alt={project.alt}
             fill
+            placeholder="blur"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={index < 2} // preload first 2
+            priority={index < 2}
           />
 
-          {/* ID badge overlay */}
+          {/* Desktop Arrows */}
+          {totalImages > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                className="z-10 hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow hover:scale-110 transition"
+              >
+                ‹
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                className="z-10 hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow hover:scale-110 transition"
+              >
+                ›
+              </button>
+            </>
+          )}
+
+          {/* ID badge */}
           <div className="absolute inset-0 flex items-end justify-end p-3">
             <span className="font-mono text-xs text-ink/70 bg-white/80 px-2 py-1 backdrop-blur-sm">
               {project.id}
@@ -123,17 +224,65 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <h3 className="font-serif text-xl font-bold text-ink mb-2">{project.title}</h3>
         <p className="font-sans text-sm text-ink/60 leading-relaxed">{project.desc}</p>
 
+        {/* Bottom Controls */}
         <div className="mt-4 flex items-center justify-between">
-          <div className="flex gap-1">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className={`w-2 h-2 rounded-full ${i === 0 ? "bg-coral" : "bg-ink/20"}`} />
+          {/* Dots */}
+          <div className="flex gap-2">
+            {[...Array(totalImages)].map((_, i) => (
+              <div
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                  i === current ? "bg-coral scale-110" : "bg-ink/20"
+                }`}
+              />
             ))}
           </div>
+
           <span className={`${project.accent} opacity-0 group-hover:opacity-100 transition-opacity`}>
             <ArrowUpRight size={20} />
           </span>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="relative flex items-center justify-center">
+
+          {/* Left Arrow */}
+          {totalImages > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevImage();
+              }}
+              className="absolute left-4 text-white text-4xl bg-black/40 px-3 py-1 rounded-full hover:bg-black/70 transition"
+            >
+              ‹
+            </button>
+          )}
+
+          <Image
+            src={project.images?.[current]}
+            alt={project.alt}
+            width={1400}
+            height={900}
+            className="max-h-[90vh] w-auto h-auto object-contain rounded-lg"
+            priority
+          />
+
+          {/* Right Arrow */}
+          {totalImages > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextImage();
+              }}
+              className="absolute right-4 text-white text-4xl bg-black/40 px-3 py-1 rounded-full hover:bg-black/70 transition"
+            >
+              ›
+            </button>
+          )}
+        </div>
+      </Modal>
     </motion.div>
   );
 }
@@ -184,10 +333,10 @@ export default function Portfolio() {
           className="text-center mt-16"
         >
           <a
-            href="#contact"
+            href="/porfolio"
             className="inline-flex items-center gap-2 border-2 border-ink text-ink font-handwriting text-xl px-8 py-3 rotate-[-1deg] hover:rotate-0 hover:bg-ink hover:text-cream transition-all duration-200 shadow-scrapbook"
           >
-            Learn More →
+            See More →
           </a>
         </motion.div>
       </div>
