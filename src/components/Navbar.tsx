@@ -7,8 +7,8 @@ import { Menu, X, } from "lucide-react";
 const links = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/#about" },
   { label: "Giving Back", href: "/communityService" },
 ];
 
@@ -59,7 +59,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="#contact"
+            href="/#contact"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
