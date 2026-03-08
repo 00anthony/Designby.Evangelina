@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/community/Hero";
 import EventSection from "@/components/community/EventSection";
 import TornDivider from "@/components/TornDivider";
-import FooterCTA from "@/components/community/FooterCTA";
+import FooterCTA from "@/components/FooterCTA";
 import { events, quickNavPills } from "@/components/community/data";
 
 export default function CommunityServicePage() {

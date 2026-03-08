@@ -9,7 +9,6 @@ import Image from "next/image";
 import Modal from "../Modal";
 
 const projects = [
-  //Upgrade?: add modals, sliders, links
   {
     id: "001",
     tag: "#Event Organizing / Vinyl Shirts",
