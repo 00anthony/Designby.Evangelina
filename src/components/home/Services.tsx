@@ -172,6 +172,21 @@ export default function Services() {
             ))}
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-16"
+        >
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 border-2 bg-ink border-ink text-cream font-handwriting text-xl px-8 py-3 rotate-[-1deg] hover:rotate-0 hover:bg-cream hover:text-ink transition-all duration-200 shadow-scrapbook"
+          >
+            See More →
+          </a>
+        </motion.div>
       </div>
     </section>
   );
