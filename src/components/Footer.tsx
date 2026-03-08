@@ -38,8 +38,14 @@ export default function Footer() {
 
             {/* Social */}
             <div className="flex gap-3 mt-6">
-              {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 border border-cream/20 flex items-center justify-center text-cream/50 hover:text-cream hover:border-cream transition-colors">
+              {[Facebook, ].map((Icon, i) => (
+                <a 
+                  key={i} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.facebook.com/people/Design-by-Evangelina/61574141763050/"
+                  className="w-9 h-9 border border-cream/20 flex items-center justify-center text-cream/50 hover:text-cream hover:border-cream transition-colors"
+                >
                   <Icon size={14} />
                 </a>
               ))}
