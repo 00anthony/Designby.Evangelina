@@ -219,7 +219,9 @@ export default function EventSection({ event, index }: EventSectionProps) {
               ))}
             </motion.div>
 
-            {/* Decorative washi tape strips */}
+            {/* 
+            Decorative washi tape strips 
+
             <motion.div
               initial={{ scaleX: 0 }}
               animate={inView ? { scaleX: 1 } : {}}
@@ -236,6 +238,7 @@ export default function EventSection({ event, index }: EventSectionProps) {
               style={{ background: tapeColor, transform: "rotate(-10deg)" }}
               aria-hidden="true"
             />
+            */}
           </div>
         </div>
       </div>

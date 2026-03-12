@@ -19,9 +19,9 @@ export const events: EventConfig[] = [
     description:
       "A heartfelt fundraising event uniting neighbors, local businesses, and advocates to support cancer patients and their families. Design by Evangelina contributes creative direction, signage, and print materials to help bring the mission to life visually.",
     details: [
-      { icon: Calendar, text: "Annual — Date TBD" },
-      { icon: MapPin, text: "London Community Hall, East End" },
-      { icon: Clock, text: "10:00 am – 6:00 pm" },
+      { icon: Calendar, text: "July 12, 2025" },
+      { icon: MapPin, text: "2100 E. 3rd st., Austin, TX 78702" },
+      { icon: Clock, text: "12:00 pm – 5:00 pm" },
       { icon: Heart, text: "Proceeds benefit local oncology support funds" },
     ],
     accentColor: "#e85d3f",
@@ -56,10 +56,10 @@ export const events: EventConfig[] = [
     description:
       "The On-Point Reentry Conference connects returning citizens with employment resources, legal services, housing support, and mentorship. Evangelina provides branding and design services pro bono to amplify the conference's message and reach.",
     details: [
-      { icon: Calendar, text: "Biannual — Spring & Fall" },
-      { icon: MapPin, text: "City Convention Centre, London" },
+      { icon: Calendar, text: "Nov. 5-8, 2024" },
+      { icon: MapPin, text: "Austin, Texas" },
       { icon: Clock, text: "9:00 am – 5:00 pm" },
-      { icon: Users, text: "300+ attendees across two days" },
+      { icon: Users, text: "300+ attendees across three days" },
     ],
     accentColor: "#4a9cc8",
     stickyNoteColor: "#d4eaf7",
@@ -68,24 +68,24 @@ export const events: EventConfig[] = [
     photoLayout: "grid",
     photos: [
       {
-        src: "/communityService/on-point-program.png",
+        src: "/communityService/on-point-solo.png",
         alt: "",
         rotate: "rotate-[-2deg]",
         label: "2024",
       },
       {
-        src: "/communityService/on-point-group.png",
+        src: "/communityService/on-point-speech2.png",
         alt: "",
         rotate: "rotate-[-2deg]",
       },
       {
-        src: "/communityService/on-point-group2.jpg",
+        src: "/communityService/on-point-speech.png",
         alt: "",
         rotate: "rotate-[-2deg]",
         
       },
       {
-        src: "/communityService/on-point-shirt.jpg",
+        src: "/communityService/on-point-group2.jpg",
         alt: "",
         rotate: "rotate-[-2deg]",
         label: "<3",
@@ -116,10 +116,10 @@ export const events: EventConfig[] = [
     photoLayout: "row",
     photos: [
       {
-        src: "/communityService/coming-soon.jpg",
+        src: "/communityService/NARP-logo.jpg",
         alt: "coming soon",
         rotate: "rotate-[-2deg]",
-        label: "Coming soon",
+        label: "",
       },
     ],
     reversed: false,
