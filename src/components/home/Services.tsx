@@ -124,7 +124,8 @@ export default function Services() {
   const headerInView = useInView(headerRef, { once: true });
 
   return (
-    <section id="services" className="py-24 px-6 bg-cream grid-bg relative">
+    <section id="services" className="relative py-24 px-6 bg-cream grid-bg overflow-hidden">
+            
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={headerRef}

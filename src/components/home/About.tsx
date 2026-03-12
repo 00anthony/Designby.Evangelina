@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Coffee, Award, Heart } from "lucide-react";
 import Image from "next/image";
+import TornEdge from "../TornEdge";
 
 const stats = [
   { value: "12+", label: "Great Years", icon: Award },
@@ -22,9 +23,11 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 px-6 bg-cream-dark relative overflow-hidden">
+    <section id="about" className="relative py-24 px-6 bg-cream-dark ">
+      <TornEdge flip className="absolute -top-44 left-1/2 -translate-x-1/2 w-screen overflow-hidden"/>
+
       {/* Background star doodle */}
-      <div className="absolute right-8 top-16 opacity-5 pointer-events-none">
+      <div className="absolute right-8 top-16 opacity-5 pointer-events-none overflow-hidden">
         <svg width="300" height="300" viewBox="0 0 300 300" fill="none" stroke="#1a1209" strokeWidth="1">
           {[...Array(8)].map((_, i) => (
             <line
@@ -37,7 +40,7 @@ export default function About() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center" ref={ref}>
           {/* Left: Photo + sticky notes */}
           <div className="relative">

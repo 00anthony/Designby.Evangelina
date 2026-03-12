@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Heart, Users, HeartHandshake, Mic, } from "lucide-react";
 import Image from "next/image";
+import TornEdge from "../TornEdge";
 
 
 const initiatives = [
@@ -48,6 +49,7 @@ export default function CommunityService() {
 
   return (
     <section id="community" className="py-24 px-6 bg-ink relative overflow-hidden">
+      
       {/* Background texture lines */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%">
@@ -168,7 +170,7 @@ export default function CommunityService() {
             className="absolute bottom-10 left-40 polaroid w-52 border-4 border-sky/40"
           >
             <Image
-              src="/communityService/speech.png"
+              src="/communityService/on-point-speech.png"
               alt="Community speech"
               width={360}
               height={800}

@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
+import TornEdge from "../TornEdge";
 
 const testimonials = [
   {
@@ -119,9 +120,11 @@ export default function Testimonials() {
   const inView = useInView(headerRef, { once: true });
 
   return (
-    <section id="testimonials" className="py-24 px-6 bg-cream grid-bg relative overflow-hidden">
+    <section id="testimonials" className="relative py-24 px-6 bg-cream grid-bg ">
+      <TornEdge className="absolute -top-52 left-0 w-screen overflow-hidden"/>
+      
       {/* Scattered doodles */}
-      <div className="absolute left-8 top-20 opacity-5 pointer-events-none">
+      <div className="absolute left-8 top-20 opacity-5 pointer-events-none overflow-hidden">
         <svg width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="#1a1209" strokeWidth="1.5">
           <rect x="10" y="10" width="100" height="100" rx="4" />
           <rect x="25" y="25" width="70" height="70" rx="4" />
@@ -129,7 +132,7 @@ export default function Testimonials() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto overflow-hidden">
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 30 }}
@@ -166,6 +169,8 @@ export default function Testimonials() {
           </p>
         </motion.div>
       </div>
+      <TornEdge flip className="absolute -bottom-48 -mb-2 left-1/2 -translate-x-1/2 w-screen z-10"/>
+
     </section>
   );
 }

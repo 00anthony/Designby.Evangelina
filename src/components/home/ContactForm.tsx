@@ -4,6 +4,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Send, MapPin, Mail, Clock, CheckCircle } from "lucide-react";
+import TornEdge from "../TornEdge";
 
 const projectTypes = [
   "Brand Identity",
@@ -58,9 +59,11 @@ export default function ContactForm() {
   }, [selectedService]);
 
   return (
-    <section id="contact" className="py-24 px-6 bg-cream grid-bg relative overflow-hidden">
+    <section id="contact" className="relative py-24 px-6 bg-cream grid-bg ">
+      <TornEdge className="absolute -top-52 left-0 w-screen overflow-hidden"/>
+      
       {/* Decorative scissors */}
-      <div className="absolute top-12 right-12 opacity-5 pointer-events-none">
+      <div className="absolute top-12 right-12 opacity-5 pointer-events-none overflow-hidden">
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="#1a1209" strokeWidth="1.5">
           <circle cx="30" cy="30" r="15" />
           <circle cx="70" cy="30" r="15" />

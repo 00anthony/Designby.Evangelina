@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Instagram, Twitter, Youtube, Facebook, ArrowUp } from "lucide-react";
+import TornEdge from "./TornEdge";
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -13,13 +14,11 @@ export default function Footer() {
 
 
   return (
-    <footer className="bg-ink text-cream py-16 px-6 relative overflow-hidden">
+    <footer className="bg-ink text-cream py-16 px-6 relative ">
       {/* Top torn edge */}
-      <div className="absolute top-0 left-0 right-0 h-6 bg-cream" style={{
-        clipPath: "polygon(0 0, 1.5% 100%, 3% 0, 4.5% 100%, 6% 0, 7.5% 100%, 9% 0, 10.5% 100%, 12% 0, 13.5% 100%, 15% 0, 16.5% 100%, 18% 0, 19.5% 100%, 21% 0, 22.5% 100%, 24% 0, 25.5% 100%, 27% 0, 28.5% 100%, 30% 0, 31.5% 100%, 33% 0, 34.5% 100%, 36% 0, 37.5% 100%, 39% 0, 40.5% 100%, 42% 0, 43.5% 100%, 45% 0, 46.5% 100%, 48% 0, 49.5% 100%, 51% 0, 52.5% 100%, 54% 0, 55.5% 100%, 57% 0, 58.5% 100%, 60% 0, 61.5% 100%, 63% 0, 64.5% 100%, 66% 0, 67.5% 100%, 69% 0, 70.5% 100%, 72% 0, 73.5% 100%, 75% 0, 76.5% 100%, 78% 0, 79.5% 100%, 81% 0, 82.5% 100%, 84% 0, 85.5% 100%, 87% 0, 88.5% 100%, 90% 0, 91.5% 100%, 93% 0, 94.5% 100%, 96% 0, 97.5% 100%, 99% 0, 100% 100%, 100% 0)"
-      }} />
+      <TornEdge flip className="absolute -top-44 -mt-1 left-1/2 -translate-x-1/2 w-screen overflow-hidden"/>      
 
-      <div className="max-w-7xl mx-auto pt-6">
+      <div className="max-w-7xl mx-auto pt-6 overflow-hidden">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>

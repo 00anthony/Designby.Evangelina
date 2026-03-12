@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ArrowUpRight, Paperclip } from "lucide-react";
 import Image from "next/image";
 import Modal from "../Modal";
+import TornEdge from "../TornEdge";
 
 const projects = [
   {
@@ -290,13 +291,11 @@ export default function Portfolio() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="portfolio" className="py-24 px-6 bg-cream-dark relative overflow-hidden">
-      {/* Decorative torn edge top */}
-      <div className="absolute top-0 left-0 right-0 h-8 bg-cream" style={{
-        clipPath: "polygon(0 0, 2% 100%, 4% 0, 6% 100%, 8% 0, 10% 100%, 12% 0, 14% 100%, 16% 0, 18% 100%, 20% 0, 22% 100%, 24% 0, 26% 100%, 28% 0, 30% 100%, 32% 0, 34% 100%, 36% 0, 38% 100%, 40% 0, 42% 100%, 44% 0, 46% 100%, 48% 0, 50% 100%, 52% 0, 54% 100%, 56% 0, 58% 100%, 60% 0, 62% 100%, 64% 0, 66% 100%, 68% 0, 70% 100%, 72% 0, 74% 100%, 76% 0, 78% 100%, 80% 0, 82% 100%, 84% 0, 86% 100%, 88% 0, 90% 100%, 92% 0, 94% 100%, 96% 0, 98% 100%, 100% 0)"
-      }} />
+    <section id="portfolio" className="relative py-24 px-6 bg-cream-dark ">
+      
+      <TornEdge flip className="absolute -top-44 left-1/2 -translate-x-1/2 w-screen overflow-hidden"/>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto overflow-hidden">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -331,13 +330,14 @@ export default function Portfolio() {
           className="text-center mt-16"
         >
           <a
-            href="/porfolio"
+            href="/portfolio"
             className="inline-flex items-center gap-2 border-2 border-ink text-ink font-handwriting text-xl px-8 py-3 rotate-[-1deg] hover:rotate-0 hover:bg-ink hover:text-cream transition-all duration-200 shadow-scrapbook"
           >
             See More →
           </a>
         </motion.div>
       </div>
+      <TornEdge className="absolute -bottom-44 left-1/2 -translate-x-1/2 w-screen z-10"/>
     </section>
   );
 }

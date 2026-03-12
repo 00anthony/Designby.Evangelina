@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${monsieur.variable} bg-cream text-ink antialiased`}>
+      <body className={`${monsieur.variable} bg-cream text-ink antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>
