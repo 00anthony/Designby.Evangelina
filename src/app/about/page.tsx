@@ -504,7 +504,7 @@ export default function AboutPage() {
               >
                 <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#ede8dc]">
                   <Image
-                    src="/hero/Headshot.PNG"
+                    src="/hero/headshot.png"
                     alt="Evangelina — founder of Design by Evangelina"
                     fill
                     className="object-cover"

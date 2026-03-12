@@ -104,7 +104,7 @@ export default function Hero() {
               className="absolute left-8 top-16 polaroid w-64 z-20 hover:z-20 md:transition-transform md:duration-300 "
             >
               <Image 
-                src='/hero/Headshot.PNG'
+                src='/hero/headshot.png'
                 alt='Evangelina A.'
                 width={360}
                 height={540}
