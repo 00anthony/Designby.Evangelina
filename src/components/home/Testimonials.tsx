@@ -169,7 +169,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
       </div>
-      <TornEdge flip className="absolute -bottom-48 -mb-2 left-1/2 -translate-x-1/2 w-screen z-10"/>
+      <TornEdge flip className="absolute -bottom-48 -mb-3 left-1/2 -translate-x-1/2 w-screen z-10"/>
 
     </section>
   );

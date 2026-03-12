@@ -48,7 +48,7 @@ export default function CommunityService() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="community" className="py-24 px-6 bg-ink relative overflow-hidden">
+    <section id="community" className="py-24 bg-ink relative">
       
       {/* Background texture lines */}
       <div className="absolute inset-0 opacity-5">
@@ -68,7 +68,7 @@ export default function CommunityService() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-16 mx-6"
         >
           <div className="flex items-center gap-4 mb-4">
             <Heart className="text-coral " size={28} />
@@ -96,7 +96,7 @@ export default function CommunityService() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ scale: 1.02 }}
-                className={`${item.color} border ${item.border} p-6 relative group`}
+                className={`${item.color} border ${item.border} p-6 relative group mx-6`}
               >
                 <span className={`absolute top-4 right-4 ${item.tagBg} px-3 py-1 font-mono text-xs tracking-widest`}>
                   {item.tag}
@@ -125,7 +125,7 @@ export default function CommunityService() {
           </div>
 
           {/* RIGHT: Photo Collage */}
-          <div className="relative h-[520px] mt-12 lg:mt-0">
+          <div className="relative h-[520px] mt-12 lg:mt-0 overflow-hidden">
           {/* Main polaroid */}
           <motion.div
             initial={{ opacity: 0, y: 40, rotate: -8 }}
@@ -187,7 +187,7 @@ export default function CommunityService() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6 }}
-          className="border border-cream/10 p-8"
+          className="border border-cream/10 p-8 mx-6"
         >
           <p className="font-mono text-xs uppercase tracking-widest text-cream/30 text-center mb-8">
             Community Impact 2024
@@ -212,6 +212,8 @@ export default function CommunityService() {
           </div>
         </motion.div>
       </div>
+            <TornEdge className="absolute -bottom-44 -mb-1 z-10 left-0 w-screen overflow-hidden"/>
+      
     </section>
   );
 }

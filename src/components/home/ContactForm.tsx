@@ -59,8 +59,7 @@ export default function ContactForm() {
   }, [selectedService]);
 
   return (
-    <section id="contact" className="relative py-24 px-6 bg-cream grid-bg ">
-      <TornEdge className="absolute -top-52 left-0 w-screen overflow-hidden"/>
+    <section id="contact" className="relative py-24 px-6 bg-cream grid-bg overflow-hidden">
       
       {/* Decorative scissors */}
       <div className="absolute top-12 right-12 opacity-5 pointer-events-none overflow-hidden">

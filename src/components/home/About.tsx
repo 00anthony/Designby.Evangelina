@@ -40,8 +40,9 @@ export default function About() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto overflow-hidden">
+      <div className="max-w-7xl mx-auto ">
         <div className="grid lg:grid-cols-2 gap-16 items-center" ref={ref}>
+
           {/* Left: Photo + sticky notes */}
           <div className="relative">
             {/* Push pin */}
@@ -63,7 +64,7 @@ export default function About() {
               className="polaroid rotate-[-3deg] max-w-sm mx-auto"
             >
               <Image 
-                src='/hero/headshot.PNG'
+                src='/hero/headshot2.png'
                 alt='Evangelina A.'
                 width={360}
                 height={540}
@@ -76,7 +77,7 @@ export default function About() {
               initial={{ opacity: 0, rotate: 10, scale: 0.8 }}
               animate={inView ? { opacity: 1, rotate: 8, scale: 1 } : {}}
               transition={{ delay: 0.6, type: "spring" }}
-              className="absolute bottom-8 -right-4 bg-mustard p-5 w-52 shadow-scrapbook rotate-[8deg]"
+              className="absolute bottom-8 -right-4 bg-mustard p-5 w-52 shadow-scrapbook rotate-[8deg] overflow-hidden"
             >
               <Star className="text-ink/40 mb-2" size={16} />
               <p className="font-handwriting text-ink text-sm leading-relaxed">
