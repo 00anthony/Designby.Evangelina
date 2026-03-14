@@ -42,13 +42,13 @@ const projects = [
   },
   {
     id: "003",
-    tag: "#Car Wraps / Business Cards",
+    tag: "#Car Wraps",
     title: "San Antonio Pets Alive",
     desc: "Brand identity development focused on warmth, trust, and compassion — creating visuals that reflect the organization's love and advocacy for animals.",
     images: [
       "/portfolio/SAPA-van.jpg",
       "/portfolio/SAPA-van-back.jpg",
-      "/portfolio/SAPA-business-card.png"
+      "/portfolio/SAPA-van2.png"
     ],
     alt: "",
     color: "bg-mustard/20",

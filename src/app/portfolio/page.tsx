@@ -90,14 +90,14 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     id: "003",
-    tag: "#Car Wraps / Business Cards",
+    tag: "#Car Wraps ",
     category: "Brand Identity",
     title: "San Antonio Pets Alive",
     desc: "Brand identity development focused on warmth, trust, and compassion — visuals that reflect love and advocacy for animals.",
     images: [
       "/portfolio/SAPA-van.jpg",
       "/portfolio/SAPA-van-back.jpg",
-      "/portfolio/SAPA-business-card.png",
+      "/portfolio/SAPA-van2.png",
     ],
     alt: "San Antonio Pets Alive van wrap and business card",
     accent: "text-gold",
@@ -114,7 +114,6 @@ const ALL_PROJECTS: Project[] = [
       "/portfolio/horizon-magazine.jpg",
       "/portfolio/horizon-magazines.jpg",
       "/portfolio/horizon-bag.jpg",
-      "/hero/porsche-ice.jpg"
     ],
     alt: "Horizon magazine editorial design",
     accent: "text-sky",
@@ -218,7 +217,7 @@ const ALL_PROJECTS: Project[] = [
     title: "Blue Ocean / HD Motorsports",
     desc: "Window graphics and interior signage for prestigious motor companies built for in person and online customer acquisition.",
     images: [
-      "/portfolio/Blue-ocean.png",
+      "/portfolio/Blue-Ocean.png",
       "/portfolio/HD-Motorsport.png",
     ],
     alt: "",
