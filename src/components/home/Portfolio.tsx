@@ -46,8 +46,8 @@ const projects = [
     title: "San Antonio Pets Alive",
     desc: "Brand identity development focused on warmth, trust, and compassion — creating visuals that reflect the organization's love and advocacy for animals.",
     images: [
-      "/portfolio/SAPA-van.jpg",
-      "/portfolio/SAPA-van-back.jpg",
+      "/portfolio/SAPA-van1-side.jpg",
+      "/portfolio/SAPA-van1-back.jpg",
       "/portfolio/SAPA-van2-side1.jpeg"
     ],
     alt: "",
