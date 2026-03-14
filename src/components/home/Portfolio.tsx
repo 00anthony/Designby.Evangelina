@@ -48,7 +48,7 @@ const projects = [
     images: [
       "/portfolio/SAPA-van.jpg",
       "/portfolio/SAPA-van-back.jpg",
-      "/portfolio/SAPA-van2.png"
+      "/portfolio/SAPA-van2-side1.jpeg"
     ],
     alt: "",
     color: "bg-mustard/20",

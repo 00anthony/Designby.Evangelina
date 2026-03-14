@@ -97,7 +97,11 @@ const ALL_PROJECTS: Project[] = [
     images: [
       "/portfolio/SAPA-van.jpg",
       "/portfolio/SAPA-van-back.jpg",
-      "/portfolio/SAPA-van2.png",
+      "/portfolio/SAPA-van2-side1.jpeg",
+      "/portfolio/SAPA-van2-side2.jpeg",
+      "/portfolio/SAPA-van2-door.jpeg",
+      "/portfolio/SAPA-van2-back.jpeg",
+      
     ],
     alt: "San Antonio Pets Alive van wrap and business card",
     accent: "text-gold",
