@@ -33,10 +33,10 @@ export async function POST(req: Request) {
     // 📩 Send Email to Client
     // -------------------------
     await resend.emails.send({
-      from: "Design by Evangelina <onboarding@resend.dev>",
+      from: "Design by Evangelina <newclient@designbyevangelina.com>",
       to: "designby.evangelina@gmail.com",
       subject: `New inquiry from ${name}`,
-      replyTo: email,
+      replyTo: `${name} <${email}>`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     // 💌 Auto-Reply to User
     // -------------------------
     await resend.emails.send({
-      from: "Design by Evangelina <onboarding@resend.dev>",
+      from: "Design by Evangelina <noreply@designbyevangelina.com>",
       to: email,
       subject: "Got your message ✦",
       html: `
