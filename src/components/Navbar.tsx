@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, } from "lucide-react";
@@ -11,6 +13,22 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Giving Back", href: "/communityService" },
 ];
+
+const router = useRouter();
+const pathname = usePathname();
+
+const handleContactClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+
+  if (pathname !== "/") {
+    // Navigate to homepage first
+    router.push("/#contact");
+  } else {
+    // Already on homepage → scroll to contact
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,6 +78,7 @@ export default function Navbar() {
           ))}
           <motion.a
             href="/#contact"
+            onClick={handleContactClick}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
